@@ -33,7 +33,10 @@ The `moleculer-web` is the official API gateway service for [Moleculer](https://
 
 ## Install
 ```
-npm install
+~$ git clone https://github.com/pontarolli/api
+~$ cd api/simple
+~$ npm install
+~$ node api.service.js
 ```
 
 ## Usage
