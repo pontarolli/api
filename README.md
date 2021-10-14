@@ -33,10 +33,22 @@ The `moleculer-web` is the official API gateway service for [Moleculer](https://
 
 ## Install
 ```
+# 1. nats:2.1.7-linux
+# Run a container tranporter in localhost available at https://hub.docker.com/_/nats?tab=tags&page=1&ordering=last_updated&name=2.1.7-linux
+# nats://localhost:4222
+~$ docker run -d --name nats -p 4222:4222 nats:2.1.7-linux
+
+# 2. api service
 ~$ git clone https://github.com/pontarolli/api
 ~$ cd api/simple
 ~$ npm install
 ~$ node api.service.js
+
+# 3. greeter service
+~$ git clone https://github.com/pontarolli/greeter
+~$ cd greeter/simple
+~$ npm install
+~$ node greeter.service.js
 ```
 
 ## Usage
@@ -46,10 +58,7 @@ This example uses API Gateway service with default settings.
 You can access to all services (including internal `$node.`) via `http://localhost:3000/`
 
 **Test URLs:**	
-- Call `test.hello` action: `http://localhost:3000/test/hello`
-
-- Get health info of node: `http://localhost:3000/~node/health`
-- List all actions: `http://localhost:3000/~node/actions`
+- Call `greeter.hello` action: `http://localhost:3000/greeter/hello`
 
 ## Documentation
 Please read our [documentation on Moleculer site](http://moleculer.services/docs/moleculer-web.html)
